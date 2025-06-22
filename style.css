@@ -45,6 +45,7 @@ body {
     margin: 0;
     font-size: 2.5em;
     letter-spacing: 2px;
+    font-weight: bold;
 }
 
 /* Subheading in hero */
@@ -195,9 +196,100 @@ body {
     border-radius: 4px;
 }
 
-/* Ensure info-section columns are horizontal on desktop/tablet */
+/* Info section columns styled like timeline cards */
+.info-section-column {
+    /* Remove card-like styles for a cleaner, integrated look */
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 32px 20px 28px 20px;
+    margin: 0 8px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    transition: none;
+    flex: 1 1 0;
+    max-width: 340px;
+    min-width: 0;
+    box-sizing: border-box;
+}
 .info-section .row {
-    flex-direction: row !important;
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap !important;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    margin: 0 auto;
+}
+.info-section-column:hover {
+    box-shadow: none;
+}
+.info-section-column h2 {
+    text-align: left;
+    width: 100%;
+}
+
+/* Button styles for learning more, matching the site's blue palette */
+.info-learn-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 28px;
+    background: #1565c0;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(21, 101, 192, 0.08);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.info-learn-btn:hover, .info-learn-btn:focus {
+    background: #40bfff;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(21, 101, 192, 0.15);
+}
+
+/* Newsletter section styling */
+.newsletter-section {
+    background: #fff;
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(21, 101, 192, 0.04);
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+/* Footer styling */
+.site-footer {
+    background: #e4e7ee;
+    color: #222;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    border-top: 1px solid #d0d4db;
+    margin-top: 0;
+}
+
+@media (max-width: 600px) {
+    .info-section .row {
+        flex-wrap: wrap !important;
+    }
+    .info-section-column {
+        padding: 24px 10px 20px 10px;
+        margin: 0 0 16px 0;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .info-section-column {
+        padding: 18px 4vw 14px 4vw;
+        margin: 0 0 12px 0;
+        max-width: 100%;
+    }
 }
 
 /* Tablet and below */
