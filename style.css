@@ -1,0 +1,307 @@
+/* Add your CSS here */
+
+/* Use a clean, modern font for the whole page */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f0f2f5 0%, #e4e7ee 40%, #e4e7ee 100%);
+    /* Light background for the page */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero section with blue gradient background */
+.hero {
+    /* Add a gradient background from light blue to the current blue */
+    background: linear-gradient(to bottom, #42a5f5, #1565c0);
+    color: #fff;
+    text-align: center;
+    padding: 40px 10px 30px 10px;
+    position: relative;
+}
+
+/* Style for the blue divider line in the hero section - now much brighter */
+.hero-divider {
+    width: 80px;
+    height: 4px;
+    background-color: #40bfff; /* Brighter blue color */
+    margin: 24px auto 18px auto; /* Space above and below the line */
+    border-radius: 2px;
+}
+
+/* Intel logo styling - make it slightly smaller */
+.intel-logo {
+    width: 90px; /* Reduced from 120px to 90px */
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Main heading in hero */
+.hero h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+/* Subheading in hero */
+.hero p {
+    margin-top: 12px;
+    font-size: 1.2em;
+}
+
+/* Timeline section with white background */
+.timeline-section {
+    /* Center the timeline section horizontally */
+    display: flex;
+    justify-content: center;
+    background: #e4e7ee; /* Slightly darker gray */
+    padding: 40px 0;
+}
+
+/* Container for timeline cards */
+.timeline-container {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;         /* Increase gap to 32px for better spacing */
+    align-items: stretch;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* Show exactly 4 cards and 3 gaps at once: 4*200px + 3*32px = 872px */
+    width: calc(4 * 200px + 3 * 32px);
+    max-width: calc(4 * 200px + 3 * 32px);
+    scroll-snap-type: x mandatory; /* Enable horizontal scroll snap */
+    margin: 0 auto; /* Center the container */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for the timeline container (works in most browsers) */
+.timeline-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+/* Individual timeline card */
+.timeline-card {
+    min-width: 200px;
+    max-width: 200px;
+    width: 200px;
+    height: 280px; /* Increased height to give more space for larger titles */
+    flex: 0 0 auto;
+    position: relative;
+    background: #fff; /* White card background */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(21, 101, 192, 0.08);
+    padding: 24px 18px 32px 18px;
+    text-align: left;
+    /* Remove left border if present */
+    border-left: none;
+    overflow: hidden; /* Hide overflow for overlay effect */
+    scroll-snap-align: start;
+    box-sizing: border-box; /* Make sure padding is included in width */
+}
+
+/* Add styling for the card images */
+.card-image {
+    width: 100%; /* Make image fill the card width */
+    height: 140px; /* Increased height for more visual space */
+    object-fit: cover; /* Crop image to fit nicely */
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    margin-bottom: 10px; /* Space below image */
+}
+
+/* Blue accent bar at the bottom of each card */
+.card-accent {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 8px;
+    background-color: #1565c0; /* Blue accent color */
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+}
+
+/* Year styling - add space below for image */
+.card-year {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #1565c0;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+/* Title styling */
+.card-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+/* Description overlay: add transform for dynamic appearance */
+.card-desc {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(21, 101, 192, 0.75); /* More transparent blue overlay */
+    color: #fff;
+    font-size: 1em;
+    border-radius: 10px;
+    padding: 30px 16px;
+    box-sizing: border-box;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(30px) scale(0.96); /* Start lower and slightly smaller */
+    transition: 
+        opacity 0.3s,
+        transform 0.3s;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Show the description overlay on hover with dynamic transform */
+.timeline-card:hover .card-desc {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1); /* Move up and scale to normal */
+}
+
+/* Style for the timeline instruction */
+.timeline-instruction {
+    text-align: center;
+    padding: 18px 0 18px 0;
+    font-size: 1.1em;
+    color: #1565c0;
+    background: #e4e7ee;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+/* Hide scrollbars for a cleaner look (optional for beginners) */
+.timeline-container::-webkit-scrollbar {
+    height: 8px;
+}
+.timeline-container::-webkit-scrollbar-thumb {
+    background: #1565c0;
+    border-radius: 4px;
+}
+
+/* Ensure info-section columns are horizontal on desktop/tablet */
+.info-section .row {
+    flex-direction: row !important;
+}
+
+/* Tablet and below */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+    .timeline-section {
+        padding: 20px 0;
+    }
+
+    .timeline-container {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        gap: 2vw; /* 3 gaps of 2vw each */
+    }
+
+    .timeline-card {
+        min-width: 23.5vw;
+        width: 23.5vw;        /* 4 cards per screen exactly */
+        max-width: 250px;   /* Prevent cards from being too wide */
+        height: 200px;      /* Reduce card height for tablets */
+        box-sizing: border-box;
+    }
+
+    /* Make timeline card images smaller and fully visible on tablets */
+    .card-image {
+        width: 100%;           /* Image fills the card width */
+        height: 80px;          /* Smaller image height for tablets */
+        object-fit: contain;   /* Show the whole image */
+        border-radius: 8px 8px 0 0;
+        margin-bottom: 10px;
+        background: #e4e7ee;   /* Optional: background for letterboxing */
+    }
+}
+
+/* Mobile-specific refinements */
+@media (max-width: 600px) {
+    .timeline-section {
+        padding: 10px 0;
+    }
+
+    /* Make the hero heading smaller on mobile for better fit */
+    .hero h1 {
+        font-size: 1.4em;
+        line-height: 1.2;
+    }
+
+    .hero h2,
+    h2 {
+        font-size: 1.1em;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1em;
+        line-height: 1.4;
+    }
+
+    .hero-divider {
+        width: 50px;
+        height: 3px;
+        margin: 16px auto 12px auto;
+    }
+
+    /* 
+      Stack the timeline cards vertically on mobile devices.
+      Use flex layout with column direction.
+    */
+    .timeline-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+        gap: 16px;
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    .timeline-card {
+        width: 90vw;
+        max-width: 340px;
+        min-width: 0;
+        margin: 0 0 0 0;
+        height: 220px;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    /* Make timeline card images smaller and fully visible on mobile */
+    .card-image {
+        width: 100%;           /* Image fills the card width */
+        height: 90px;          /* Reduce image height for mobile */
+        object-fit: contain;   /* Show the whole image, even if it leaves space */
+        border-radius: 8px 8px 0 0;
+        margin-bottom: 10px;
+        background: #e4e7ee;   /* Optional: add a background for letterboxing */
+    }
+}
