@@ -281,16 +281,16 @@ body {
     padding: 12px 0 8px 0;
 }
 .highlights-section h3 {
-    font-size: 1.5em;
+    font-size: 1.75em;
     line-height: 1.2;
     vertical-align: middle;
     display: inline-block;
     font-weight: bold;
 }
 .highlights-section h3 img {
-    height: 1em;
+    height: 20px;
     vertical-align: middle;
-    margin-bottom: 2px;
+    margin-bottom: 7px;
 }
 
 @media (max-width: 600px) {
