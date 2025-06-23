@@ -273,6 +273,26 @@ body {
     margin-top: 0;
 }
 
+/* Highlights section with blue gradient background */
+.highlights-section {
+    background: linear-gradient(to bottom, #42a5f5, #1565c0);
+    color: #fff;
+    text-align: center;
+    padding: 12px 0 8px 0;
+}
+.highlights-section h3 {
+    font-size: 1.5em;
+    line-height: 1.2;
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: bold;
+}
+.highlights-section h3 img {
+    height: 1em;
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
 @media (max-width: 600px) {
     .info-section .row {
         flex-wrap: wrap !important;
